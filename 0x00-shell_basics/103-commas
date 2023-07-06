@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -ap1 | awk 'BEGIN{ORS=", "} {print ($0 ~ /^(\.|\.\.)$/) ? $0 : $0"/"} END{print ""}'
+ls -Ap1 | awk '{ORS = (NR % 2 == 0 ? ", " : "\n")} !/\//'
